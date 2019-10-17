@@ -5,15 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour
 {
-    public float counter;
+    public Animator animator;
+    private float counter;
     public int ChangeSceneAtSec;
+    private int scene;
 
     // Start is called before the first frame update
     void Start()
     {
         counter = Time.deltaTime;
-
-        //SceneManager.LoadScene("Sceneworkspace");
+        scene = SceneManager.GetActiveScene().buildIndex +1;
     }
 
     // Update is called once per frame
@@ -23,9 +24,13 @@ public class SceneManagerScript : MonoBehaviour
         counter += Time.deltaTime;
         // When to change scene
         if (counter > ChangeSceneAtSec) {
-            int scene = SceneManager.GetActiveScene().buildIndex;
-            // Change to next scene
-            SceneManager.LoadScene(scene + 1);
+            animator.SetTrigger("fadeOut");
         }
+    }
+
+    void OnFadeComplete ()
+    {
+        // Change to next scene
+        SceneManager.LoadScene(scene);
     }
 }
