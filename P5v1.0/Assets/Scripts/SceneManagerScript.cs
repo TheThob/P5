@@ -7,8 +7,9 @@ public class SceneManagerScript : MonoBehaviour
 {
     public Animator animator;
     private float counter;
-    public int ChangeSceneAtSec;
+    public float ChangeSceneAtSec;
     private int scene;
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,15 +23,20 @@ public class SceneManagerScript : MonoBehaviour
     {
         // counter in secs
         counter += Time.deltaTime;
+
+
         // When to change scene
-        if (counter > ChangeSceneAtSec) {
+        if (counter >= ChangeSceneAtSec)
+        {
             animator.SetTrigger("fadeOut");
         }
     }
 
-    void OnFadeComplete ()
+    void OnFadeOutComplete ()
     {
         // Change to next scene
         SceneManager.LoadScene(scene);
     }
+
+   
 }
