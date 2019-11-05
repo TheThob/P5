@@ -1,0 +1,14 @@
+1. Have git installed (and not just gitDesktopApp, the actual git) from here: 
+https://git-scm.com/download/win
+
+2. Open cmd
+
+3. Go to the directory of the project
+
+4. git lfs track "*.s"     (*.s means all the files of .s type)
+
+5. git add "*.s" 
+
+6. git commit -m "some messege"
+
+7. git push origin master			(or name of a branch instead of 'master')
