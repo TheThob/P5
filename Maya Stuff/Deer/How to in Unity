@@ -1,0 +1,9 @@
+Deer:
+
+1. Import the files
+2. Put the Deer_notMoving2 in the scene
+3. In deer_walks and deer_idle go to animation tab and choose 'loop time' and 'loop position'
+4. In Assets right click and create Animator
+5. Drag the animations to animator, as an entry make 'idle'
+6. Right click on 'idle' and 'create transition'. Do that with the rest
+7. Click on the transition arrow and mess around with a timeline in the inspector
